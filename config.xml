@@ -14,7 +14,7 @@
     </description>
 
     <author>
-        Terje Brådland 
+        Terje Bradland 
     </author>
 <icon src="icons/logo.png" gap:platform="ios" />
 <icon src="icons/logo.png" gap:platform="winphone" />
