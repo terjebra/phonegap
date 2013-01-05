@@ -18,6 +18,6 @@
     </author>
 <icon src="icons/ios/logo.png" gap:platform="ios" />
 <icon src="icons/win/logo.png" gap:platform="winphone" />
-<icon src="icons/win/logo.png" gap:platform="winphone" gap:role="background" />
-<gap:splash src="icobs/win/splash.jpg" gap:platform="winphone" />
+<icon src="/win/logo.png" gap:platform="winphone" gap:role="background" />
+<gap:splash src="icons/win/splash.jpg" gap:platform="winphone" />
 </widget>
