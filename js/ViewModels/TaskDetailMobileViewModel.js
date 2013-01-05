@@ -64,8 +64,6 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
         self.close = function () {
             Mediator.notify(null, "back");
         }
-
-        setInterval(self.fetchTasks, 990);
     }
 
 

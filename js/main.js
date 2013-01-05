@@ -25,8 +25,9 @@
 
 require(['pc','mobile'], function (pc, mobile) {
     var isTouchDevice = !!('ontouchstart' in window)  || !!('onmsgesturechange' in window); 
-    
-    if(isTouchDevice){
+    var ua = navigator.userAgent;
+    alert(ua);
+    if (isTouchDevice || ua.indexOf('IEMobile') != -1) {
         mobile.init();
     }
     else{
