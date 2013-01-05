@@ -16,8 +16,8 @@
     <author>
         Terje Bradland 
     </author>
-<icon src="icons/logo.png" gap:platform="ios" />
-<icon src="icons/logo.png" gap:platform="winphone" />
-<icon src="icons/logo.png" gap:platform="winphone" gap:role="background" />
-
+<icon src="icons/ios/logo.png" gap:platform="ios" />
+<icon src="icons/win/logo.png" gap:platform="winphone" />
+<icon src="icons/win/logo.png" gap:platform="winphone" gap:role="background" />
+<gap:splash src="icobs/win/splash.jpg" gap:platform="winphone" />
 </widget>
