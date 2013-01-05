@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/digifix_pcrens/!svn/ver/903/WebApp/WebApp/js/Models
+END
+Information.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/digifix_pcrens/!svn/ver/887/WebApp/WebApp/js/Models/Information.js
+END
+ToDo.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/digifix_pcrens/!svn/ver/944/WebApp/WebApp/js/Models/ToDo.js
+END
+TaskStatus.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/digifix_pcrens/!svn/ver/903/WebApp/WebApp/js/Models/TaskStatus.js
+END
+TaskStatusService.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/digifix_pcrens/!svn/ver/943/WebApp/WebApp/js/Models/TaskStatusService.js
+END
+ToDoStatus.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/digifix_pcrens/!svn/ver/887/WebApp/WebApp/js/Models/ToDoStatus.js
+END
+ToDoStatusService.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/digifix_pcrens/!svn/ver/943/WebApp/WebApp/js/Models/ToDoStatusService.js
+END
+Customer.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/digifix_pcrens/!svn/ver/887/WebApp/WebApp/js/Models/Customer.js
+END
+Task.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/digifix_pcrens/!svn/ver/903/WebApp/WebApp/js/Models/Task.js
+END
+TaskService.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/digifix_pcrens/!svn/ver/943/WebApp/WebApp/js/Models/TaskService.js
+END

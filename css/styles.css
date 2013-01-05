@@ -1,0 +1,247 @@
+﻿body {
+    background: #f4f4f4;
+
+}
+        
+.progress {
+    margin-bottom: 0px;
+    /*margin-top: 10px;*/
+}
+.well {
+    margin-bottom: 3px;
+}
+.label, .badge {
+          
+    /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
+}
+.digifix-badge {
+    padding: 2px 9px 1px;
+    border-radius: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.digifix-large {
+    font-size: 20px;
+}
+.digifix-medium {
+    font-size: 17px;
+}
+.digifix-customerNumber {
+    font-weight: bold;
+}
+.digifix-customerName {
+    width: 310px;
+}
+.digifix-productInfo {
+    font-style: italic;   
+}
+.digifix-span-padding {
+    padding: 15px 0 0 0;
+    width: 100px !important;
+}
+.digifix-margin {
+    margin: 0 2px 2px 2px;
+            
+}
+.digifix-navbar-padding-top {
+    padding-top: 5px;
+}
+
+.express-column, .vip-column , .normal-column  {
+    margin-bottom: 30px;    
+    
+}
+
+.express-column .color {
+    background-color: #fecf23;
+}
+
+.vip-column .color {
+    background-color: #34c2e3;
+}
+
+.normal-column .color {
+    background-color: #a5df41;
+}
+        
+.listNumber {
+    font-size: 16px;
+    font-weight: bold; 
+    display: block;
+    color: white;
+    padding: 9px 14px 9px 14px;
+    background-color: orange;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 3px;
+    -webkit-box-shadow: inset 1px 1px 3px 1px rgba(1, 1, 1, 0.4);
+    box-shadow: inset 1px 1px 3px 1px rgba(1, 1, 1, 0.4);
+    text-shadow: 1px 1px 3px #000;
+    filter: dropshadow(color=#000, offx=1, offy=1);
+}
+.vip {
+    background-color: blue;
+}
+.express {
+    background-color: #80FF00;}
+.normal {
+    
+}
+.cases {
+    list-style: none;
+    list-style-type: none;
+}
+.liWidth {
+    display: block;
+    float: left;
+    clear: none;
+    width: 100px;
+}
+.numberOfExpress {
+    
+}
+.numberOfVIP {
+}
+.numberOfNormal {
+}
+
+/* MODAL FORM */
+.modal {
+    width: 98% !important;
+    position: fixed;
+    top: 10px !important;
+    left: 1% !important;
+    margin: 0 !important;
+}
+.taskFinishedDropDown {
+    float: right;
+    width: 250px;
+}
+#sortable {
+    list-style: none;
+}
+    #sortable li {
+        margin-bottom: 2px;
+    }
+    #sortable .controls {
+        margin-left: 0;
+    }
+        /*#sortable .controls:before {
+            content: "";
+            display: block;
+            float: left;
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            margin-right: 4px;
+            border: 2px dotted #CCCCCC;
+            background-color: #EEEEEE;
+        }*/
+
+.todoName {
+    width: 70%;
+    margin: 2px 0 3px 0 !important;
+}
+.todoName-mobil {
+    height: 30px !important;
+    width: 60% !important;
+    display: inline !important;
+}
+.ui-select {
+    /*width: 20% !important;*/
+    display: inline !important;
+}
+.ui-select a {
+    width: 25%;
+}
+}
+.todoDropDown {
+    width: 100px;
+    margin: 3px 0 4px 0 !important;
+}
+#finishedDate {
+    height: 14px !important;
+    font-size: 10px !important;
+    width: 100px !important;
+}
+
+.modal-textarea {
+    width: 98%;
+}
+
+#myModalLabel em {
+    font-size: 20px;
+}
+.moveit {
+    cursor: move;
+}
+
+ul, ol {
+padding: 0;
+margin: 0 0 6px 5px;
+}
+
+
+.digifix-minitable {
+    float: left;
+    clear: none;
+    width: 85px;
+    display: block;
+    font-weight: normal
+}
+.top-part {
+    padding: 10px 10px 0 10px;
+    background-color: #f4f4f4;
+}
+.task-row   {
+    min-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: visible;
+    margin-bottom: 2px;
+    border: 1px solid #d4d4d4;
+    background-color: #fafafa;
+    background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    *zoom: 1;
+}
+.task-row:before,
+.task-row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.task-row:after {
+  clear: both;
+}
+.task-row-item {
+    clear: none;  
+  min-height: 1px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+
+.item-mobile {
+    float: left;
+}
+
+.ui-icon-arrow-d {
+    display:  none !important;
+}

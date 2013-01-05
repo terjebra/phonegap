@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" >    
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery-mobile/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery_ui/jquery-ui-1.9.0.custom.css" />
+    <script data-main="js/main" src="js/require.js"></script>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+
+
+
+<!-- MOBILE MOBILE MOBILE  MOBILE MOBILE MOBILE MOBILE MOBILE -->
+<!-- MOBILE MOBILE MOBILE  MOBILE MOBILE MOBILE MOBILE MOBILE -->
+<!-- MOBILE MOBILE MOBILE  MOBILE MOBILE MOBILE MOBILE MOBILE -->
+
+
+
+<script id="mobile" type="text/x-handlebars-template">
+    
+    <div data-role="page" class="type-interior"  id="mainPage" data-bind="with:taskInformation">
+
+        <div data-role="header" data-theme="f">
+            <h1>DigiFix Gjøremålsliste</h1>
+        </div><!-- /header -->
+
+            <div data-role="content">
+                <div class="content-primary">    
+                    <ul class="taskLists" id="expressTasks" data-role="listview" data-bind="template: {name: 'taskTemplateMobile',  foreach: expressTasks}">
+                       
+                    </ul>
+                     <ul class="taskLists" id="vipTasks" data-role="listview" data-bind="template: {name: 'taskTemplateMobile',  foreach: VIPTasks}">
+                        
+                    </ul>
+
+                    <ul class="taskLists" id="ordinarTasks" data-role="listview" data-bind="template: {name: 'taskTemplateMobile',  foreach: normalTasks}">
+                        
+                    </ul>
+                </div><!--/content-primary -->      
+            </div><!-- /content -->
+
+    </div><!-- /page -->
+
+     <div data-role="page" class="type-interior" data-bind="with:currentTask" id="details" >
+
+        <div class="modal-header" data-bind="with : $data.customer">
+            <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <button type="button" data-bind="click: $root.close" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" data-bind="click: $root.updateTask" class="close" data-dismiss="modal" aria-hidden="true">Lagre</button>
+                </div>
+            <div class="ui-block-b"><select class="taskFinishedDropDown" data-bind="options: $root.taskStatuses, optionsText: 'name', optionsValue: 'name',  value: $parent.status"></select></div>
+            </div><!-- /grid-a -->
+
+            
+            <h3 id="myModalLabel"><span data-bind="text: customerNumber"></span> - <em><span data-bind="text: customerName"></span></em></h3> 
+            <i class="icon-info-sign"></i> <em><span data-bind="text: $parent.productInfo"></span></em>    <br />
+            <i class="icon-phone"></i> <span data-bind="text: customerPhone"></span> <br />
+            <i class="icon-envelope"></i> <span data-bind="text: customerEmail"></span><br />
+        </div>
+
+        <ul data-role="listview" data-divider-theme="b" data-inset="true" id="todoListView" data-bind="template: {name: 'toDoTemplateMobile',  foreach: toDoList, afterRender: $root.postProcess}">                
+        </ul>
+    
+          <button type="button" data-bind="click: addNewToDo"><i class="icon-plus"></i></button> 
+
+    </div><!-- /page -->
+</script> <!-- /mobile -->
+
+
+<!-- taskTemplateMobile taskTemplateMobile taskTemplateMobile  taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile -->
+<!-- taskTemplateMobile taskTemplateMobile taskTemplateMobile  taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile -->
+<!-- taskTemplateMobile taskTemplateMobile taskTemplateMobile  taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile taskTemplateMobile -->
+
+
+<script id="taskTemplateMobile" type="text/html">
+    <li data-bind="tap: $root.showDetail" >
+        <div class="item-mobile digifix-large-mobile digifix-customerNumber-mobile" data-bind="with : $data.customer">
+            K<span data-bind="text: customerNumber"></span>
+        </div>
+        <div class="item-mobile digifix-medium-mobile digifix-customerName-mobile" data-bind="with : $data.customer">
+            <span data-bind="text: customerName"></span>
+        </div>                    
+        <div class="item-mobile digifix-medium-mobile digifix-productInfo-mobile">
+            <span data-bind="text: $data.productInfo"></span>
+        </div>                                    
+        <span class="ui-li-count">A2</span>
+        
+        <div>
+            <div class="progress">
+                <div class="bar" data-bind="style : { width : $data.percentage() +'%'}"></div>
+            </div>
+        </div>
+    </li>
+</script>
+
+
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+
+
+<script id="toDoTemplateMobile" type="text/html">
+   <li data-theme="c">
+        <div class="ui-grid-solo">
+            
+            <span class="moveit"><i class="icon-move icon-large"></i></span>
+            
+            <a href="#" data-role="button" data-mini="true" data-inline="true" data-bind="click: $parent.removeToDo"><i class="icon-trash icon-large"></i></a>                
+            <input type="text" name="Name" data-inline="true"  data-bind="value: $data.name" class="todoName-mobil"/>
+            
+            <select class="todoStatus-mobile" data-mini="true" data-native-menu="false" data-inline="true" data-bind="options: $root.toDoStatues, optionsText: 'name', optionsValue: 'name',  value:$data.status">
+            </select>
+            
+        </div>
+    </li>
+</script>
+
+
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+<!-- toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile  toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile toDoTemplateMobile -->
+
+
+<script id="pc" type="text/x-handlebars-template">
+<div id="container-fluid" data-bind="with:taskInformation ">
+    <div class="row-fluid top-part" >
+        <div class="span6">
+            <img src="images/_Final-Logo-250.png" alt="DigiFix Logo" title="DigiFix Logo" />
+        </div>
+
+        <div class="span6">
+            <strong>
+                <span data-bind="text: totalTasks"></span> maskiner i arbeid fordelt på
+            </strong>
+
+             
+        
+            <ul>
+                <li data-bind="click: $parent.showModal"><span class="liWidth">Hastesaker:</span> <span class="numberOfExpress" data-bind="text: numberOfExpressTasks"></span></li>
+                <li><span class="liWidth">VIP:</span> <span class="numberOfVIP" data-bind="text: numberOfVIPTasks"/></li>
+                <li><span class="liWidth">Normal:</span> <span class="numberOfNormal" data-bind="text: numberOfOrdinaryTasks"/></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="row-fluid">
+
+        <div class="span12">
+            <div class="row-fluid">
+                <div class="span12 express-column" data-bind="template: {name: 'taskTemplate',  foreach: expressTasks}"></div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 vip-column" data-bind="template: {name: 'taskTemplate',  foreach: VIPTasks}"></div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 normal-column" data-bind="template: {name: 'taskTemplate',  foreach: normalTasks}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+    
+    
+<!-- ################################################################################################## -->
+
+
+<script id="taskTemplate" type="text/html">
+    <div class="task-row popup" data-bind="click: $root.showModal">
+        <div class="span12" >                        
+            <div class="row-fluid" >
+                <div class="task-row-item">
+                        <span class="badge color digifix-badge" data-bind="click: $parent.showModal, text: $data.taskNumber"></span>
+                </div>
+                <div class="task-row-item digifix-medium">
+                    <span class="label">A2</span>
+                </div>                 
+                <div class="task-row-item digifix-large digifix-customerNumber" data-bind="with : $data.customer, click: $parent.showModal" >
+                    K<span data-bind="text: customerNumber"></span>
+                </div>                    
+                <div class="task-row-item digifix-medium digifix-customerName" data-bind="with : $data.customer, click: $parent.showModal" >
+                    <span data-bind="text: customerName"></span>
+                </div>                    
+                <div class="task-row-item digifix-medium digifix-productInfo"  data-bind="click: $parent.showModal">
+                    <span data-bind="text: $data.productInfo, click: $parent.showModal"></span>
+                </div>                                    
+            </div>
+            <div class="row-fluid" >
+                <div class="span12 digifix-margin-top">
+                    <div class="progress">
+                             <div class="bar" data-bind="style : { width : $data.percentage() +'%'}"></div>
+                    </div>
+                </div>
+            </div>             
+        </div>
+    </div>
+</script> <!-- /pc -->
+
+
+<!-- ################################################################################################## -->
+
+
+<div class="modal hide" id="myModal"  data-bind="with:currentTask ">
+    <div class="dialogBox">
+    </div>
+    <div class="modal-header" data-bind="with : $data.customer">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel"><span data-bind="text: customerNumber"></span> - <em><span data-bind="text: customerName"></span></em></h3> 
+        <select class="taskFinishedDropDown" data-bind="options: $root.taskStatuses, optionsText: 'name', optionsValue: 'name',  value: $parent.status"></select>
+        <i class="icon-info-sign"></i> <em><span data-bind="text:  $parent.productInfo"></span></em>    <br />
+        <i class="icon-phone"></i> <span data-bind="text:  customerPhone"></span> <br />
+        <i class="icon-envelope"></i> <span data-bind="text:  customerEmail"></span><br />
+    </div>
+    <div class="modal-body">
+        <textarea class="modal-textarea" id="note" rows="3" name="Description" data-bind="value: note"></textarea>
+        <ul id="sortable"  data-bind="template: {name: 'toDoTemplate',  foreach: toDoList}, sortableList: toDoList">                
+        </ul>
+        <button class="btn btn-large" data-bind="click: addNewToDo"><i class="icon-plus"></i></button> 
+    </div>
+    <div class="modal-footer">
+        <button class="btn save btn-large" data-dismiss="modal" aria-hidden="true">Lukk</button>
+        <button class="btn btn-primary btn-large saveToDo" data-bind="click: $root.updateTask">Lagre</button>
+    </div>
+</div>
+
+
+<!-- ################################################################################################## -->
+
+
+<script id="toDoTemplate" type="text/html">
+   <li class="ui-state-default">
+        <div class="controls">
+            <span class="moveit"><i class="icon-move icon-large"></i></span>
+            <a class="btn btn-small" href="#" data-bind="click: $parent.removeToDo"><i class="icon-trash icon-large"></i></a>
+            <select class="todoDropDown" data-bind="options: $root.toDoStatues, optionsText: 'name', optionsValue: 'name',  value:$data.status"></select>
+            <input type="text" name="Name"  data-bind="value: $data.name" class="todoName"/>                        
+        </div>
+    </li>
+</script>
+
+
+ <script id="alert-error" type="text/x-handlebars-template">
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{text}}
+   </div>
+</script>
+
+</body>
+</html>
