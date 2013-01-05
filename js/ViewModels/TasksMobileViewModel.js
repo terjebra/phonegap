@@ -40,7 +40,7 @@
 
         }
 
-        setInterval(self.fetchTasks, 990);
+        setInterval(self.fetchTasks, 10000);
     }
 
     return TasksMobileViewModel;
