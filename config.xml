@@ -17,7 +17,8 @@
         Terje Bradland 
     </author>
 
-    <preference name="show-splash-screen-spinner" value="false" />
+ <preference name="show-splash-screen-spinner" value="false" />
+<gap:splash src="splash.png" />
 <icon src="icons/ios/logo.png" gap:platform="ios" />
 <icon src="icons/win/logo.png" gap:platform="winphone" />
 <icon src="/win/logo.png" gap:platform="winphone" gap:role="background" />
