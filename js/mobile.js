@@ -7,7 +7,7 @@ define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/Task
         
         var source = $("#mobile").html();
         var template = Handlebars.compile(source);
-        alert('template');
+        
         $("#main").html(template);
         ko.applyBindings(viewModel, document.getElementById("mainPage"));
         ko.applyBindings(viewModelDetail, document.getElementById("details"));
