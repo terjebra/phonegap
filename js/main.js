@@ -25,7 +25,8 @@ require.config({
 
 require(['pc','mobile'], function (pc, mobile) {
     var isTouchDevice = !!('ontouchstart' in window)  || !!('onmsgesturechange' in window); 
-    var specificMobileDevices = navigator.userAgent.indexOf('Android') != -1 ||  navigator.userAgent.indexOf('IEMobile') !=-1;
+	var ua = navigator.userAgent.toLowerCase();
+    var specificMobileDevices = ua.indexOf('android') != -1 ||  ua.indexOf('iemobile') !=-1;
 	
     if (isTouchDevice ||  specificMobileDevices ) {
 	mobile.init();
