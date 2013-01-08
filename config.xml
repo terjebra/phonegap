@@ -5,9 +5,7 @@
         versionCode="10" 
         version   = "1.0.0">
 
-    <!-- versionCode is optional and Android only -->
-
-    <name>Oppgavelist</name>
+    <name>Oppgaveliste</name>
 
     <description>
         Viser oppgaver
@@ -17,6 +15,7 @@
         Terje Bradland 
     </author>
 
+<preference name="fullscreen" value="true"/>
  <preference name="show-splash-screen-spinner" value="false" />
 <gap:splash src="splash.png" />
 <icon src="icons/ios/logo.png" gap:platform="ios" />
