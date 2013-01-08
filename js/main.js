@@ -29,7 +29,7 @@ require(['pc','mobile'], function (pc, mobile) {
     var specificMobileDevices = ua.indexOf('android') != -1 ||  ua.indexOf('iemobile') !=-1;
 	alert(ua);
     if (isTouchDevice ||  specificMobileDevices ) {
-	alert('immobile@);
+	alert('immobile');
 	mobile.init();
 
     }
