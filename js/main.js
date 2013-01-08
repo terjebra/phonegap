@@ -27,7 +27,7 @@ require(['pc','mobile'], function (pc, mobile) {
     var isTouchDevice = !!('ontouchstart' in window)  || !!('onmsgesturechange' in window); 
 	var ua = navigator.userAgent.toLowerCase();
     var specificMobileDevices = ua.indexOf('android') != -1 ||  ua.indexOf('iemobile') !=-1;
-	
+	alert(ua);
     if (isTouchDevice ||  specificMobileDevices ) {
 	mobile.init();
     }
