@@ -3,19 +3,16 @@ define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/Task
 	  
         var mediator = new Mediator();
         var viewModel = new TasksMobileViewModel(mediator);
-        var viewModelDetail = new TaskDetailMobileViewModel(mediator);
-        	alert('after newing');        
+        var viewModelDetail = new TaskDetailMobileViewModel(mediator);     
         var source = $("#mobile").html();
         var template = Handlebars.compile(source);
-	alert('before template');        
-        $("#main").html(template);
+	$("#main").html(template);
         ko.applyBindings(viewModel, document.getElementById("mainPage"));
         ko.applyBindings(viewModelDetail, document.getElementById("details"));
         addBindings();
-        alert('after init template');     
-        $( '#mainPage' ).live( 'pageinit',function(event){          
+      
+        $("#mainPage").live( 'pageinit',function(event){          
             viewModel.fetchTasks();
-		alert('before live');
         });
 
     }
