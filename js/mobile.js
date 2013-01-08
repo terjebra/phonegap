@@ -4,7 +4,7 @@ define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/Task
         var mediator = new Mediator();
         var viewModel = new TasksMobileViewModel(mediator);
         var viewModelDetail = new TaskDetailMobileViewModel(mediator);
-        
+        	alert('after newing');        
         var source = $("#mobile").html();
         var template = Handlebars.compile(source);
 	alert('before template');        
