@@ -17,6 +17,7 @@
 
 <preference name="fullscreen" value="true"/>
  <preference name="show-splash-screen-spinner" value="false" />
+<preference name="load-url-timeout" value="60000" />
 <gap:splash src="splash.png" />
 <icon src="icons/ios/logo.png" gap:platform="ios" />
 <icon src="icons/win/logo.png" gap:platform="winphone" />
