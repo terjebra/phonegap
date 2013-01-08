@@ -7,27 +7,17 @@ define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/Task
         
         var source = $("#mobile").html();
         var template = Handlebars.compile(source);
-        
+	alert('before template');        
         $("#main").html(template);
         ko.applyBindings(viewModel, document.getElementById("mainPage"));
         ko.applyBindings(viewModelDetail, document.getElementById("details"));
         addBindings();
-        
-        $( '#mainPage' ).live( 'pageinit',function(event){
-          
+        alert('after init template');     
+        $( '#mainPage' ).live( 'pageinit',function(event){          
             viewModel.fetchTasks();
-
-
+		alert('before live');
         });
 
-        //$('#mainPage').live("swiperight", function(){
-        //    alert('right');
-        //});
-     
-
-        //$('#mainPage').live("swipeleft", function(){
-        //    alert('left');
-        //});
     }
 
     function addBindings(){
