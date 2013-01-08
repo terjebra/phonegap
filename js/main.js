@@ -1,4 +1,4 @@
-﻿require.config({
+require.config({
     paths: {
         "jquery": "jquery-1.7.2",
         "jquery-ui": "jquery-ui-1.9.2.custom",
@@ -26,8 +26,9 @@
 require(['pc','mobile'], function (pc, mobile) {
     var isTouchDevice = !!('ontouchstart' in window)  || !!('onmsgesturechange' in window); 
     var ua = navigator.userAgent;
-    alert(ua);
+	alert(ua);
     if (isTouchDevice || ua.indexOf('IEMobile') != -1) {
+	alert('mobile');
         mobile.init();
     }
     else{
