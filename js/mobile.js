@@ -6,14 +6,15 @@ define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/Task
         var viewModelDetail = new TaskDetailMobileViewModel(mediator);     
         var source = $("#mobile").html();
         var template = Handlebars.compile(source);
-	$("#main").html(template);
+	    $("#main").html(template);
         ko.applyBindings(viewModel, document.getElementById("mainPage"));
         ko.applyBindings(viewModelDetail, document.getElementById("details"));
         addBindings();
-      
-        $("#mainPage").live( 'pageinit',function(event){          
+        $('#mainPage').trigger('create');
+        $(document).bind('pageinit', function (event) {
             viewModel.fetchTasks();
         });
+      
 
     }
 
