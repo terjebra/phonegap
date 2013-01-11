@@ -4,8 +4,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" >    
-    
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" >        
     <link rel="stylesheet" type="text/css" href="css/jquery-mobile/jquery.mobile-1.2.0.css" />
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery_ui/jquery-ui-1.9.0.custom.css" />
@@ -61,43 +60,43 @@
         </div><!-- /page -->
   
 
-<script id="taskTemplateMobile" type="text/html">
-    <li data-bind="tap: $root.showDetail" >
-        <div class="item-mobile digifix-large-mobile digifix-customerNumber-mobile" data-bind="with : $data.customer">
-            K<span data-bind="text: customerNumber"></span>
-        </div>
-        <div class="item-mobile digifix-medium-mobile digifix-customerName-mobile" data-bind="with : $data.customer">
-            <span data-bind="text: customerName"></span>
-        </div>                    
-        <div class="item-mobile digifix-medium-mobile digifix-productInfo-mobile">
-            <span data-bind="text: $data.productInfo"></span>
-        </div>                                    
-        <span class="ui-li-count">A2</span>
-        
-        <div>
-            <div class="progress">
-                <div class="bar" data-bind="style : { width : $data.percentage() +'%'}"></div>
+    <script id="taskTemplateMobile" type="text/html">
+        <li data-bind="tap: $root.showDetail" >
+            <div class="item-mobile digifix-large-mobile digifix-customerNumber-mobile" data-bind="with : $data.customer">
+                K<span data-bind="text: customerNumber"></span>
             </div>
-        </div>
-    </li>
-</script>
+            <div class="item-mobile digifix-medium-mobile digifix-customerName-mobile" data-bind="with : $data.customer">
+                <span data-bind="text: customerName"></span>
+            </div>                    
+            <div class="item-mobile digifix-medium-mobile digifix-productInfo-mobile">
+                <span data-bind="text: $data.productInfo"></span>
+            </div>                                    
+            <span class="ui-li-count">A2</span>
+            
+            <div>
+                <div class="progress">
+                    <div class="bar" data-bind="style : { width : $data.percentage() +'%'}"></div>
+                </div>
+            </div>
+        </li>
+    </script>
 
 
 
-<script id="toDoTemplateMobile" type="text/html">
-   <li data-theme="c">
-        <div class="ui-grid-solo">
-            
-            <span class="moveit"><i class="icon-move icon-large"></i></span>
-            
-            <a href="#" data-role="button" data-mini="true" data-inline="true" data-bind="click: $parent.removeToDo"><i class="icon-trash icon-large"></i></a>                
-            <input type="text" name="Name" data-inline="true"  data-bind="value: $data.name" class="todoName-mobil"/>
-            
-            <select class="todoStatus-mobile" data-mini="true" data-native-menu="false" data-inline="true" data-bind="options: $root.toDoStatues, optionsText: 'name', optionsValue: 'name',  value:$data.status">
-            </select>
-            
-        </div>
-    </li>
-</script>
+    <script id="toDoTemplateMobile" type="text/html">
+       <li data-theme="c">
+            <div class="ui-grid-solo">
+                
+                <span class="moveit"><i class="icon-move icon-large"></i></span>
+                
+                <a href="#" data-role="button" data-mini="true" data-inline="true" data-bind="click: $parent.removeToDo"><i class="icon-trash icon-large"></i></a>                
+                <input type="text" name="Name" data-inline="true"  data-bind="value: $data.name" class="todoName-mobil"/>
+                
+                <select class="todoStatus-mobile" data-mini="true" data-native-menu="false" data-inline="true" data-bind="options: $root.toDoStatues, optionsText: 'name', optionsValue: 'name',  value:$data.status">
+                </select>
+                
+            </div>
+        </li>
+    </script>
 </body>
 </html>
