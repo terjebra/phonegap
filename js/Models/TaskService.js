@@ -46,7 +46,6 @@
         })
         
         var json = { taskinfo: { taskId: task.taskId(), note: task.note(), status: task.status() }, todos: todoList };
-        console.log(JSON.stringify(json));
         return JSON.stringify(json);
     }
 

@@ -1,16 +1,14 @@
-define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/TaskDetailMobileViewModel','Mediator','handlebars', 'hammer','modernizer','jquery-mobile'], function ($, ko, TasksMobileViewModel,TaskDetailMobileViewModel,Mediator) {
+define(['jquery', 'knockout', 'ViewModels/TasksMobileViewModel','ViewModels/TaskDetailMobileViewModel', 'Mediator','hammer','jquery-mobile'], function ($, ko, TasksMobileViewModel,TaskDetailMobileViewModel,Mediator) {
 	function init() {
 	  
         var mediator = new Mediator();
         var viewModel = new TasksMobileViewModel(mediator);
         var viewModelDetail = new TaskDetailMobileViewModel(mediator);     
-        var source = $("#mobile").html();
-        var template = Handlebars.compile(source);
-	    $("#main").html(template);
+
         ko.applyBindings(viewModel, document.getElementById("mainPage"));
         ko.applyBindings(viewModelDetail, document.getElementById("details"));
         addBindings();
-        $('#mainPage').trigger('create');
+
         $(document).bind('pageinit', function (event) {
             viewModel.fetchTasks();
         });
