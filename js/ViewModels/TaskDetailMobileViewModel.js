@@ -37,6 +37,7 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
         }
 
         self.showDetail = function (task) {
+             $.mobile.loading('show')
             TaskService.fetchDetailedTask(task, function (currentTask) {
               self.currentTask(currentTask);   
                self.postProcess();
@@ -45,7 +46,7 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
 
             })
             ;
-
+         $.mobile.loading('hide')
         }
 
         self.fetchTaskStatuses = function () {
