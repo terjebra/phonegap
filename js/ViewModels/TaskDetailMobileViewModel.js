@@ -10,7 +10,12 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
 
         self.mediator.subscribe(function(value)
         {
-            $.mobile.changePage("#details");
+            $.mobile.changePage("#details",
+                {
+                    transition: "slide"
+                }
+
+            );
            
             self.fetchTaskStatuses();
             self.fetchToDoStatuses();

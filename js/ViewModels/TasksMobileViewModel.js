@@ -7,7 +7,11 @@
 
         self.mediator.subscribe(function(value)
         {
-            $.mobile.changePage("#mainPage");
+            $.mobile.changePage("#mainPage",
+                {
+                    transition: "slide",
+                    reverse: true
+                });
             self.fetchTasks();
            
         },self, "back")
