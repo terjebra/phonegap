@@ -10,16 +10,20 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
 
         self.mediator.subscribe(function(value)
         {
+            
+             $.mobile.loading('show')
+            self.fetchTaskStatuses();
+            self.fetchToDoStatuses();
+            self.showDetail(value);
+
             $.mobile.changePage("#details",
                 {
                     transition: "slide"
                 }
 
             );
-           
-            self.fetchTaskStatuses();
-            self.fetchToDoStatuses();
-            self.showDetail(value);
+
+             $.mobile.loading('hide')
         },self, "details")
 
         self.postProcess = function(){
@@ -37,7 +41,7 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
         }
 
         self.showDetail = function (task) {
-             $.mobile.loading('show')
+           
             TaskService.fetchDetailedTask(task, function (currentTask) {
               self.currentTask(currentTask);   
                self.postProcess();
@@ -46,7 +50,7 @@ define(['jquery', 'knockout', 'Models/TaskService', 'Models/ToDoStatusService', 
 
             })
             ;
-         $.mobile.loading('hide')
+        
         }
 
         self.fetchTaskStatuses = function () {
