@@ -33,15 +33,9 @@
              
         }
         self.showDetail = function (task) {
-            TaskService.fetchDetailedTask(task, function (currentTask) {                 
+                        
                self.mediator.notify(task,"details");
-               
-            },
-            function error(data) {
-
-            })
-            ;
-
+    
         }
 
         setInterval(self.fetchTasks, 10000);
